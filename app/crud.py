@@ -1,6 +1,5 @@
-from turtle import title
 from sqlalchemy.orm import Session
-from model import Book
+from models import Book
 from schemas import BookSchema
 
 

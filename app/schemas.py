@@ -1,4 +1,3 @@
-from lib2to3.pgen2.token import OP
 from typing import List, Optional, Generic, TypeVar
 from pydantic import BaseModel, Field
 from pydantic.generics import GenericModel
@@ -14,6 +13,10 @@ class BookSchema(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class Request(GenericModel, Generic[T]):
+    parameter: Optional[T] = Field(...)
 
 
 class RequestBook(BaseModel):
